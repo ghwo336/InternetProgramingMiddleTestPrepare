@@ -95,7 +95,7 @@ export const sections: Section[] = [
           rows: [
             { cells: ['미션 컨트롤\nMission Control', '열려 있는 <strong>창의 위치를 빠르게 제어</strong>하도록 도와주는 기능'] },
             { cells: ['앱 Exposé', '사용 중인 앱의 <strong>윈도우를 모두 표시</strong>하는 기능'] },
-            { cells: ['Spaces', '<strong>작업 공간을 분리</strong>하여 멀티태스킹을 효율적으로 할 수 있게 해주는 기능'] },
+            { cells: ['Spaces', '<strong>여러 개의 데스크탑/창을 사용</strong>해 <strong>작업 공간을 분리</strong>하여 멀티태스킹을 효율적으로 할 수 있게 해주는 기능'] },
             { cells: ['Launchpad', '설치된 모든 앱을 한 화면에 표시하는 기능'] },
             { cells: ['Finder', 'macOS의 파일 탐색기'] },
             { cells: ['App Store', '앱을 설치/업데이트하는 플랫폼. Xcode도 여기서 다운로드'] },
@@ -104,6 +104,14 @@ export const sections: Section[] = [
             { cells: ['Force Click', '트랙패드를 <strong>강하게 눌러</strong> 추가 기능(미리보기·사전 등) 실행'] },
             { cells: ['Multi-Touch', '두 개 이상의 손가락으로 동시 입력을 받는 기술. 2007년 첫 iPhone에서 도입'] },
           ],
+        },
+      },
+      {
+        type: 'callout',
+        data: {
+          type: 'key',
+          label: '🎯 Spaces 핵심 키워드',
+          content: 'Spaces의 정의를 외울 때 다음 <strong>두 가지 키워드</strong>를 모두 포함해야 안전합니다:<br/><br/>1. <strong>여러 개의 데스크탑/창 사용</strong><br/>2. <strong>작업 공간 분리로 멀티태스킹</strong><br/><br/>둘 중 하나만 쓰면 감점될 수 있어요. 완전한 답변을 위해 두 개념을 연결해서 외우세요.',
         },
       },
       {
@@ -123,8 +131,16 @@ export const sections: Section[] = [
     number: '02',
     label: '공통 범위',
     title: 'iPhone & Android 역사',
-    desc: '세부 연도보다 큰 흐름과 핵심 이벤트만 기억하면 됨.',
+    desc: '이전 학기에는 시험범위 외였음. 올해 범위는 교수님 공지 확인 필수. 참고 자료로만 활용하세요.',
     blocks: [
+      {
+        type: 'callout',
+        data: {
+          type: 'warn',
+          label: '⚠️ 시험범위 확인 필요',
+          content: '이전 학기(24년 1학기)에는 <strong>iOS/Android 역사 부분이 시험범위에 포함되지 않았습니다</strong>. 올해 시험범위는 교수님이 공지하는 걸 반드시 확인하세요. 이 섹션은 참고용으로만 사용하세요.',
+        },
+      },
       {
         type: 'table',
         data: {
@@ -314,7 +330,7 @@ export const sections: Section[] = [
     number: '06',
     label: 'Swift Concept',
     title: 'Swift 언어의 특징',
-    desc: '01장에 나온 Swift 장점 — 단답형으로 나올 수 있음.',
+    desc: 'Swift 장점 — 단답형으로 나올 수 있음.',
     blocks: [
       {
         type: 'table',
@@ -348,7 +364,7 @@ export const sections: Section[] = [
     number: '07',
     label: 'Swift 문법',
     title: '변수와 상수',
-    desc: '중간고사에 변수명 규칙 O/X 문제가 나왔습니다. 선언 형식 + 이름 규칙 필수.',
+    desc: '선언 형식 + 이름 규칙 필수.',
     blocks: [
       {
         type: 'heading3',
@@ -375,8 +391,16 @@ let anotherPi = 3 + 0.14159   // Double로 추론`,
         type: 'callout',
         data: {
           type: 'warn',
-          label: '핵심 — 실수는 항상 Double',
-          content: 'Swift는 실수 리터럴을 <strong>항상 Double</strong>로 추론합니다. Float 아님. 정수와 실수를 섞으면 → Double.',
+          label: '🚨 감점 주의 — Float 쓰면 틀립니다',
+          content: '"3.14 값을 갖는 상수 pi를 선언하시오" 문제에서 <strong>자료형을 반드시 <code>Double</code>로 써야 합니다</strong>.<br/><br/>✅ 정답: <code>let pi: Double = 3.14</code><br/>❌ 오답: <code>let pi: Float = 3.14</code><br/><br/>이유: Swift에서 실수 리터럴은 <strong>기본적으로 Double로 추론</strong>되기 때문. Float는 명시적으로 지정할 때만 쓰고, 일반적인 상수 선언에서는 Double이 표준.',
+        },
+      },
+      {
+        type: 'callout',
+        data: {
+          type: 'warn',
+          label: '핵심 — 실수는 항상 Double (Float 아님!)',
+          content: 'Swift는 실수 리터럴을 <strong>항상 Double</strong>로 추론합니다. 정수와 실수를 섞으면 → Double.<br/><br/><strong>시험에서 "3.14 값을 갖는 상수 선언" 문제에 Float 쓰면 오답 처리됩니다.</strong> 반드시 Double로 쓰세요.',
         },
       },
       {
@@ -384,10 +408,18 @@ let anotherPi = 3 + 0.14159   // Double로 추론`,
         content: '이름 규칙 (O/X 문제 대비)',
       },
       {
+        type: 'callout',
+        data: {
+          type: 'warn',
+          label: '🔴 O/X 문제 실제 출제 방식',
+          content: 'O/X 문제는 <strong>변수에 직접 적용된 형태</strong>(예: <code>let π = 3.14</code> 가능한가)가 아니라 <strong>개념 서술형</strong>으로 출제됐습니다.<br/><br/>예시:<br/>• "유니코드 문자를 변수로 사용할 수 있다." → O<br/>• "변수는 숫자로 시작할 수 있다." → X<br/>• "상수는 한 번 값을 할당하면 다시 변경할 수 있다." → X<br/>• "변수 이름에 공백을 포함할 수 있다." → X<br/><br/>⚠️ 다만, 올해 시험에는 변수에 적용된 형태로 물을 수도 있으니 <strong>두 경우 모두 대비</strong>하세요.',
+        },
+      },
+      {
         type: 'compare',
         data: {
           left: {
-            label: '가능',
+            label: '가능 (O)',
             content: `<ul class="list-disc pl-4 space-y-1">
 <li>유니코드 문자: <code>let π = 3.14</code></li>
 <li>한글/이모지: <code>let 你好</code>, <code>let 🐶</code></li>
@@ -396,7 +428,7 @@ let anotherPi = 3 + 0.14159   // Double로 추론`,
 </ul>`,
           },
           right: {
-            label: '불가능',
+            label: '불가능 (X)',
             content: `<ul class="list-disc pl-4 space-y-1">
 <li><strong>공백 포함</strong>: <code>var my name</code></li>
 <li><strong>숫자로 시작</strong>: <code>var 1a</code></li>
@@ -1356,7 +1388,7 @@ present(lampOnAlert, animated: true, completion: nil)`,
           items: [
             { question: '열려 있는 창의 위치를 빠르게 제어하도록 도와주는 기능은?', answer: '미션 컨트롤 (Mission Control)' },
             { question: '사용 중인 앱의 윈도우를 모두 표시하는 기능은?', answer: '앱 Exposé (App Exposé)' },
-            { question: '작업 공간을 분리해서 멀티태스킹을 훨씬 더 효율적으로 할 수 있게 해주는 것은?', answer: 'Spaces' },
+            { question: '작업 공간을 분리해서 멀티태스킹을 훨씬 더 효율적으로 할 수 있게 해주는 것은?', answer: 'Spaces — 여러 개의 데스크탑/창을 사용해 작업 공간을 분리하여 멀티태스킹을 효율적으로 할 수 있게 해주는 기능' },
             { question: '트랙패드를 강하게 눌러서 추가 기능을 실행하는 기능의 이름은?', answer: 'Force Click (포스 클릭)' },
           ],
         },
@@ -1403,6 +1435,9 @@ present(lampOnAlert, animated: true, completion: nil)`,
             { question: '다음 중 변수명으로 사용 가능한 것은? ① 1name ② my name ③ _name ④ na me', answer: '③ _name (숫자로 시작 X, 공백 포함 X)' },
             { question: '함수 매개변수에 기본값(디폴트값)을 지정하는 문법을 쓰시오.', answer: 'func f(x: Int = 10) — 타입 뒤에 = 기본값' },
             { question: '"Swift의 switch 문에서는 각 case 끝에 break를 써야 한다." (O/X)', answer: 'X — Swift의 switch는 자동으로 fall through 하지 않아 break 불필요.' },
+            { question: '"유니코드 문자를 변수 이름으로 사용할 수 있다." (O/X)', answer: 'O — π, 你好, 🐶 같은 유니코드 문자 모두 가능' },
+            { question: '"상수(let)는 한 번 값을 할당한 후에도 다시 변경할 수 있다." (O/X)', answer: 'X — let은 재할당 불가. 변경하려면 var 사용' },
+            { question: '"3.14 값을 갖는 상수 pi 선언 시 자료형은 Float로 써도 정답이다." (O/X)', answer: 'X — 반드시 Double로 써야 함. Float 쓰면 오답 처리' },
           ],
         },
       },
