@@ -1,6 +1,6 @@
 // ────────────────────────────────────────────
 // Swift Exam Kit — 구조화된 콘텐츠 데이터
-// "족보" → "시험 후기 / 기출 정보 / 출제 경향" 치환 완료
+// Swift Exam Kit — content data
 // ────────────────────────────────────────────
 
 export interface TableRow {
@@ -93,9 +93,9 @@ export const sections: Section[] = [
         data: {
           headers: ['기능', '설명'],
           rows: [
-            { cells: ['미션 컨트롤\nMission Control', '열려 있는 <strong>창의 위치를 빠르게 제어</strong>하도록 도와주는 기능 <badge:hot>기출</badge>'] },
-            { cells: ['앱 Exposé', '사용 중인 앱의 <strong>윈도우를 모두 표시</strong>하는 기능 <badge:hot>기출</badge>'] },
-            { cells: ['Spaces', '<strong>작업 공간을 분리</strong>하여 멀티태스킹을 효율적으로 할 수 있게 해주는 기능 <badge:hot>기출</badge>'] },
+            { cells: ['미션 컨트롤\nMission Control', '열려 있는 <strong>창의 위치를 빠르게 제어</strong>하도록 도와주는 기능'] },
+            { cells: ['앱 Exposé', '사용 중인 앱의 <strong>윈도우를 모두 표시</strong>하는 기능'] },
+            { cells: ['Spaces', '<strong>작업 공간을 분리</strong>하여 멀티태스킹을 효율적으로 할 수 있게 해주는 기능'] },
             { cells: ['Launchpad', '설치된 모든 앱을 한 화면에 표시하는 기능'] },
             { cells: ['Finder', 'macOS의 파일 탐색기'] },
             { cells: ['App Store', '앱을 설치/업데이트하는 플랫폼. Xcode도 여기서 다운로드 <badge:mid>출제 가능</badge>'] },
@@ -110,7 +110,7 @@ export const sections: Section[] = [
         type: 'callout',
         data: {
           type: 'tip',
-          label: 'iOS 앱 개발 전제 조건 (기출 가능)',
+          label: 'iOS 앱 개발 전제 조건',
           content: '<strong>① 맥 PC</strong> + <strong>② macOS(OS X)</strong> + <strong>③ Xcode</strong><br/>→ Xcode가 macOS에서만 동작하기 때문에 맥 PC가 필수.',
         },
       },
@@ -121,9 +121,9 @@ export const sections: Section[] = [
   {
     id: 'ios-history',
     number: '02',
-    label: '첫 수업 범위',
+    label: '공통 범위',
     title: 'iPhone & Android 역사',
-    desc: '별도 PPT(iPhoneAndAndroid.pdf)가 있을 정도로 교수님이 강조한 부분. 세부 연도보다 큰 흐름과 핵심 이벤트만 기억하면 됨.',
+    desc: '세부 연도보다 큰 흐름과 핵심 이벤트만 기억하면 됨.',
     blocks: [
       {
         type: 'table',
@@ -201,15 +201,13 @@ export const sections: Section[] = [
     number: '04',
     label: 'Swift Concept · 핵심',
     title: 'Swift UI 객체 개념',
-    badge: '단답 절반',
-    badgeType: 'hot',
-    desc: '시험 절반이 이 단답형입니다. 책에 한 줄로 나온 정의를 그대로 외우세요. 교재와 살짝 말을 바꿔서 물을 수도 있음 (예: "임의의 양의 텍스트").',
+    desc: '정의를 그대로 외우세요. 살짝 말을 바꿔서 물을 수도 있음 (예: "임의의 양의 텍스트").',
     blocks: [
       {
         type: 'callout',
         data: {
           type: 'key',
-          label: 'Xcode + 버튼으로 추가하는 객체들 (기출)',
+          label: 'Xcode + 버튼으로 추가하는 객체들',
           content: 'Xcode에서 스토리보드 편집 시 <strong>우측 상단의 + 버튼</strong>을 클릭하면 Objects 라이브러리가 열리고, 여기서 아래 객체들을 드래그해 화면에 배치할 수 있음.<br/>시험에서는 <strong>각 객체의 이름과 정의</strong>를 단답형으로 물어봄. 정의를 그대로 외울 것.',
         },
       },
@@ -218,17 +216,17 @@ export const sections: Section[] = [
         data: {
           headers: ['객체', '정의 (외울 문장)'],
           rows: [
-            { cells: ['레이블 (Label)\nUILabel', '<mark>임의의 양의 텍스트</mark>를 보여주기 위한 객체 (읽기 전용) <badge:hot>기출</badge>'] },
+            { cells: ['레이블 (Label)\nUILabel', '<mark>임의의 양의 텍스트</mark>를 보여주기 위한 객체 (읽기 전용)'] },
             { cells: ['버튼 (Button)\nUIButton', '사용자의 <strong>터치 이벤트</strong>를 받는 객체'] },
             { cells: ['텍스트 필드 (TextField)\nUITextField', '사용자로부터 <strong>한 줄의 텍스트</strong>를 입력받는 객체'] },
-            { cells: ['텍스트 뷰 (TextView)\nUITextView', '<strong>여러 줄</strong>의 텍스트를 입력받거나 표시하는 객체 (TextField는 한 줄) <badge:hot>기출</badge>'] },
+            { cells: ['텍스트 뷰 (TextView)\nUITextView', '<strong>여러 줄</strong>의 텍스트를 입력받거나 표시하는 객체 (TextField는 한 줄)'] },
             { cells: ['이미지 뷰 (ImageView)\nUIImageView', '이미지를 화면에 표시하는 객체'] },
             { cells: ['스위치 (Switch)\nUISwitch', '<strong>on/off</strong> 두 상태를 표현하는 객체'] },
             { cells: ['데이트 피커 (Date Picker)\nUIDatePicker', '<strong>날짜와 시간</strong>을 선택할 수 있게 해주는 객체. 시계 앱의 알람 탭에서 자주 사용'] },
             { cells: ['피커 뷰 (Picker View)\nUIPickerView', '목록에서 항목을 <strong>회전(스크롤)</strong>하여 선택하는 객체. 문자열을 선택할 때 사용'] },
             { cells: ['타이머 (Timer)', '일정 시간마다 반복적으로 작업을 수행하게 하는 객체'] },
             { cells: ['얼럿 (Alert)\nUIAlertController', '사용자에게 <strong>중요한 알림이나 경고 메시지</strong>를 나타내는 객체'] },
-            { cells: ['스토리보드 (Storyboard)', '<strong>화면 간의 흐름 및 전체적인 모양</strong>을 <mark>시각적인 방식으로 연결·표현</mark>하여 직관적으로 앱의 흐름을 확인할 수 있게 만든 기능 <badge:hot>기출</badge>'] },
+            { cells: ['스토리보드 (Storyboard)', '<strong>화면 간의 흐름 및 전체적인 모양</strong>을 <mark>시각적인 방식으로 연결·표현</mark>하여 직관적으로 앱의 흐름을 확인할 수 있게 만든 기능'] },
             { cells: ['ViewController', '화면(뷰)을 제어하는 클래스'] },
             { cells: ['델리게이트 (Delegate)', '어떤 객체의 <strong>동작을 대신 수행</strong>하도록 위임받은 객체. 피커뷰 등에서 사용'] },
           ],
@@ -245,8 +243,6 @@ export const sections: Section[] = [
       {
         type: 'heading3',
         content: 'TextField vs TextView 구분',
-        badge: '기출',
-        badgeType: 'hot',
       },
       {
         type: 'compare',
@@ -265,7 +261,7 @@ export const sections: Section[] = [
         type: 'callout',
         data: {
           type: 'warn',
-          label: '시험 기출 — TextField ≠ TextView',
+          label: '주의 — TextField ≠ TextView',
           content: '"TextField"와 "TextView"는 전혀 다른 객체. <strong>한 줄 vs 여러 줄</strong>로 구분. 혼동 주의!',
         },
       },
@@ -278,9 +274,7 @@ export const sections: Section[] = [
     number: '05',
     label: 'Swift Concept · 핵심',
     title: '아웃렛 변수 · 액션 함수',
-    badge: '기출 확정',
-    badgeType: 'hot',
-    desc: '기출 정보에 "아웃렛 변수와 액션 함수에 대해서도 물었음"이라고 명시됨.',
+    desc: '아웃렛 변수와 액션 함수의 차이를 확실히 구분해야 합니다.',
     blocks: [
       {
         type: 'compare',
@@ -367,8 +361,6 @@ export const sections: Section[] = [
       {
         type: 'heading3',
         content: '선언 형식',
-        badge: '기출',
-        badgeType: 'hot',
       },
       {
         type: 'code',
@@ -398,8 +390,6 @@ let anotherPi = 3 + 0.14159   // Double로 추론`,
       {
         type: 'heading3',
         content: '이름 규칙 (O/X 문제 대비)',
-        badge: '중간 기출',
-        badgeType: 'hot',
       },
       {
         type: 'compare',
@@ -449,7 +439,7 @@ let anotherPi = 3 + 0.14159   // Double로 추론`,
     number: '08',
     label: 'Swift 문법',
     title: '기본 자료형 (Data Types)',
-    desc: '교재 "기본 데이터 자료형" 표. 각 타입의 특징이 단답으로 나올 수 있음.',
+    desc: '각 타입의 특징이 단답으로 나올 수 있음.',
     blocks: [
       {
         type: 'table',
@@ -469,7 +459,7 @@ let anotherPi = 3 + 0.14159   // Double로 추론`,
       },
       {
         type: 'heading3',
-        content: '타입 변환 (기출)',
+        content: '타입 변환',
       },
       {
         type: 'code',
@@ -499,7 +489,7 @@ let widthLabel = label + String(width)   // Int → String 변환`,
     number: '09',
     label: 'Swift 문법',
     title: '연산자 (Operators)',
-    desc: '별도 PPT(Basic Operators.pdf)로 제공됨 — 출제 가능성 있음.',
+    desc: '출제 가능성 있음.',
     blocks: [
       {
         type: 'heading3',
@@ -680,9 +670,7 @@ let exclamation: Character = "!"`,
     number: '11',
     label: 'Swift 문법 · 핵심',
     title: '배열 (Array)',
-    badge: '기출 확정',
-    badgeType: 'hot',
-    desc: '기출 정보에 "adidas, nike, puma" 문제가 실제로 출제됐다고 명시됨.',
+    desc: '배열 선언, 요소 추가/삭제, 개수 확인 등 기본 연산을 정리.',
     blocks: [
       {
         type: 'heading3',
@@ -708,8 +696,6 @@ score2.append(100)`,
       {
         type: 'heading3',
         content: '자주 쓰는 연산',
-        badge: '기출',
-        badgeType: 'hot',
       },
       {
         type: 'code',
@@ -789,8 +775,6 @@ print(greet(person: "Brian"))   // "Hello, Brian!"`,
       {
         type: 'heading3',
         content: '아규먼트 레이블 완전 정리',
-        badge: '기출 확정',
-        badgeType: 'hot',
       },
       {
         type: 'text',
@@ -830,7 +814,7 @@ print(greet(person: "Bill", from: "Cupertino"))
       },
       {
         type: 'heading4',
-        content: '3) Omitting Argument Labels — 언더스코어(_)로 레이블 생략 🔴 기출',
+        content: '3) Omitting Argument Labels — 언더스코어(_)로 레이블 생략',
       },
       {
         type: 'code',
@@ -853,8 +837,6 @@ someFunction(1, secondParameterName: 2)
       {
         type: 'heading3',
         content: '디폴트 파라미터 값 (Default Parameter Values)',
-        badge: '기출',
-        badgeType: 'hot',
       },
       {
         type: 'text',
@@ -948,7 +930,7 @@ someFunction(parameterWithoutDefault: 4)
     number: '14',
     label: 'Swift 문법 · 최우선',
     title: '옵셔널 (Optional)',
-    desc: '시험 후기가 두 번 강조한 단원: "옵셔널 관련은 개념 확실히 알아두는 게 중요합니다~ 중요해요~"\n기출 출제 경향 요약: "옵셔널만 제대로 파면 절반은 맞출 수 있다". 여기가 시험의 핵심.',
+    desc: 'Swift의 핵심 개념. 값이 있을 수도, 없을 수도 있는 타입.',
     blocks: [
       {
         type: 'heading3',
@@ -964,13 +946,11 @@ someFunction(parameterWithoutDefault: 4)
       },
       {
         type: 'heading3',
-        content: '2) 교재 대표 예제',
-        badge: '출제 1순위',
-        badgeType: 'hot',
+        content: '2) 대표 예제',
       },
       {
         type: 'text',
-        content: '교재 PPT "옵셔널 변수" 페이지에 <strong>정확히 이 코드</strong>가 있습니다. 변수명·값만 바꿔서 출제될 가능성이 매우 높아요.',
+        content: '<strong>옵셔널 변수</strong> 관련 대표 코드입니다. 변수명·값만 바꿔서 출제될 가능성이 매우 높아요.',
       },
       {
         type: 'code',
@@ -1026,7 +1006,7 @@ if index != nil {
             { cells: ['Optional\n(옵셔널)', '값이 있을 수도, 없을 수도(nil) 있는 타입', '<code>Int?</code>'] },
             { cells: ['nil', '값이 없음 (JS의 null과 동일)', '<code>index = nil</code>'] },
             { cells: ['Wrapped\n(래핑)', '옵셔널에 값이 할당되어 <strong>포장된 상태</strong>', '<code>index = 3</code>'] },
-            { cells: ['Forced Unwrapping\n(강제 언래핑) <badge:hot>기출</badge>', '<code>!</code>로 옵셔널을 <strong>강제로 풀어서</strong> 값에 접근', '<code>index!</code>'] },
+            { cells: ['Forced Unwrapping\n(강제 언래핑)', '<code>!</code>로 옵셔널을 <strong>강제로 풀어서</strong> 값에 접근', '<code>index!</code>'] },
             { cells: ['Implicitly Unwrapped\n(암묵적 언래핑)', '<code>Int!</code>로 선언 → <code>!</code> 없이 접근 가능', '<code>var x: Int!</code>'] },
           ],
         },
@@ -1201,7 +1181,7 @@ switch char {
         type: 'callout',
         data: {
           type: 'warn',
-          label: 'O/X 기출 확정',
+          label: 'O/X 핵심 포인트',
           content: '문제: "스위치문에서 <strong>break</strong>를 써야 종료된다" → 정답: <strong>X (거짓)</strong><br/><br/>Swift 공식 문법: <em>"In contrast with switch statements in C and Objective-C, switch statements in Swift don\'t fall through the bottom of each case and into the next one by default."</em><br/><br/>즉, Swift의 switch는 <strong>매칭된 case 실행 후 자동으로 종료</strong>됨. <code>break</code> 문 불필요. C/Java와 정반대!',
         },
       },
@@ -1231,7 +1211,7 @@ switch char {
     number: '16',
     label: 'Swift 문법 · 추가',
     title: '클로저 (Closure) · 익명함수',
-    desc: '별도 PPT(Closures.pdf)로 제공된 만큼 출제 가능성 있음. 06장 PPT에도 "익명함수란?"으로 자세히 나옴.',
+    desc: '출제 가능성이 높은 익명함수 개념.',
     blocks: [
       {
         type: 'heading3',
@@ -1320,7 +1300,7 @@ func completeWork(finished: Bool) -> () {
     number: '17',
     label: 'UI · 추가',
     title: '얼럿 (Alert)',
-    desc: '06장 전용 객체. 06장 범위 포함이면 출제 가능.',
+    desc: '사용자에게 메시지를 띄우는 UI 객체.',
     blocks: [
       {
         type: 'heading3',
@@ -1377,7 +1357,7 @@ present(lampOnAlert, animated: true, completion: nil)`,
     number: '18',
     label: 'Practice',
     title: '예상 문제 33',
-    desc: '기출 + 출제 가능성 높은 문제들. 머릿속으로 먼저 답해보세요.',
+    desc: '머릿속으로 먼저 답해보세요.',
     blocks: [
       {
         type: 'quiz-group',
@@ -1487,7 +1467,7 @@ present(lampOnAlert, animated: true, completion: nil)`,
       {
         type: 'checklist-group',
         data: {
-          title: 'Swift UI 객체 정의 (단답 절반)',
+          title: 'Swift UI 객체 정의',
           items: [
             '레이블 = 임의의 양의 텍스트를 보여주기 위한 객체',
             '스토리보드 = 화면 흐름을 시각적으로 연결·표현',
@@ -1546,8 +1526,8 @@ present(lampOnAlert, animated: true, completion: nil)`,
         type: 'callout',
         data: {
           type: 'warn',
-          label: '시험 출제 경향 요약',
-          content: '<strong>"개념을 확실히 잡고, 옵셔널만 제대로 파면 절반은 맞출 수 있다."</strong><br/>맥북 concept에 시간 쓰지 말고, UI 객체 정의(절반)와 옵셔널(핵심)에 올인. 문법은 JS/TS 개발자라면 <strong>차이점만</strong> 잡으면 됩니다.',
+          label: '공부 팁',
+          content: '개념을 확실히 잡고, UI 객체 정의와 옵셔널에 집중하세요. 문법은 <strong>차이점만</strong> 잡으면 됩니다.',
         },
       },
     ],
