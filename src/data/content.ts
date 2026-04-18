@@ -73,7 +73,7 @@ export interface HeroMeta {
 export const heroData = {
   eyebrow: 'Internet Programming · All-in-One',
   title: 'Swift Exam Kit',
-  subtitle: '출제 범위 전체를 한 페이지로',
+  subtitle: '전체 범위를 한 페이지로',
   desc: '벼락치기하시는 분들을 위한 정리본입니다!',
   disclaimer: '내용의 정확성을 책임지지는 않습니다! 정확한 내용은 수업자료를 확인해주세요!',
 };
@@ -86,7 +86,7 @@ export const sections: Section[] = [
     number: '01',
     label: '공통 범위',
     title: '맥북 Concept',
-    desc: '배점 낮음 (2~3점). 기능 이름만 외우면 됨. 손가락 개수 같은 세부는 안 나옴.',
+    desc: '기능 이름만 외우면 됨.',
     blocks: [
       {
         type: 'table',
@@ -98,10 +98,10 @@ export const sections: Section[] = [
             { cells: ['Spaces', '<strong>작업 공간을 분리</strong>하여 멀티태스킹을 효율적으로 할 수 있게 해주는 기능'] },
             { cells: ['Launchpad', '설치된 모든 앱을 한 화면에 표시하는 기능'] },
             { cells: ['Finder', 'macOS의 파일 탐색기'] },
-            { cells: ['App Store', '앱을 설치/업데이트하는 플랫폼. Xcode도 여기서 다운로드 <badge:mid>출제 가능</badge>'] },
-            { cells: ['Xcode', 'iOS 앱 개발용 <strong>통합 개발 환경(IDE)</strong>. <mark>macOS에서만 동작</mark> <badge:mid>출제 가능</badge>'] },
-            { cells: ['트랙패드', '멀티터치 제스처를 지원하는 입력 장치 <badge:mid>출제 가능</badge>'] },
-            { cells: ['Force Click', '트랙패드를 <strong>강하게 눌러</strong> 추가 기능(미리보기·사전 등) 실행 <badge:mid>출제 가능</badge>'] },
+            { cells: ['App Store', '앱을 설치/업데이트하는 플랫폼. Xcode도 여기서 다운로드'] },
+            { cells: ['Xcode', 'iOS 앱 개발용 <strong>통합 개발 환경(IDE)</strong>. <mark>macOS에서만 동작</mark>'] },
+            { cells: ['트랙패드', '멀티터치 제스처를 지원하는 입력 장치'] },
+            { cells: ['Force Click', '트랙패드를 <strong>강하게 눌러</strong> 추가 기능(미리보기·사전 등) 실행'] },
             { cells: ['Multi-Touch', '두 개 이상의 손가락으로 동시 입력을 받는 기술. 2007년 첫 iPhone에서 도입'] },
           ],
         },
@@ -489,7 +489,7 @@ let widthLabel = label + String(width)   // Int → String 변환`,
     number: '09',
     label: 'Swift 문법',
     title: '연산자 (Operators)',
-    desc: '출제 가능성 있음.',
+    desc: '',
     blocks: [
       {
         type: 'heading3',
@@ -873,8 +873,6 @@ someFunction(parameterWithoutDefault: 4)
     number: '13',
     label: 'Swift 문법 · 보충',
     title: '클래스 상속 (Inheritance)',
-    badge: '출제 가능',
-    badgeType: 'mid',
     desc: '클래스 상속은 Swift/iOS 개발의 기본 구조. ViewController가 동작하는 이유가 바로 상속.',
     blocks: [
       {
@@ -950,7 +948,7 @@ someFunction(parameterWithoutDefault: 4)
       },
       {
         type: 'text',
-        content: '<strong>옵셔널 변수</strong> 관련 대표 코드입니다. 변수명·값만 바꿔서 출제될 가능성이 매우 높아요.',
+        content: '<strong>옵셔널 변수</strong> 관련 대표 코드입니다. 변수명·값만 바꿔서 나올 수 있어요.',
       },
       {
         type: 'code',
@@ -1211,7 +1209,7 @@ switch char {
     number: '16',
     label: 'Swift 문법 · 추가',
     title: '클로저 (Closure) · 익명함수',
-    desc: '출제 가능성이 높은 익명함수 개념.',
+    desc: '익명함수 개념.',
     blocks: [
       {
         type: 'heading3',
@@ -1517,8 +1515,7 @@ present(lampOnAlert, animated: true, completion: nil)`,
             '괄호 안에 답 쓸 때, 문제의 괄호 다음 괄호도 반드시 쓰기!',
             '문제의 변수만으로 코드가 안 되면 새 변수를 직접 선언하기',
             '한글/영문 답 모두 허용 (단답형)',
-            '실습 코드는 안 나옴 — 개념과 문법에 집중',
-            'Aspect fit 같은 세부 기능은 안 나옴',
+            '개념과 문법에 집중',
           ],
         },
       },
