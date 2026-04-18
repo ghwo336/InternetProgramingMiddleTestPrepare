@@ -131,7 +131,7 @@ function App() {
           className="text-center text-[13px] font-mono"
         >
           <span style={{ color: 'var(--color-ink-muted)' }}>
-            Internet Programming · Swift Exam Kit · v2.0 · 19개 파일 기반 · All-in-One
+            Internet Programming · Swift Exam Kit · v2.0 · 18개 파일 기반 · All-in-One
           </span>
         </footer>
       </div>

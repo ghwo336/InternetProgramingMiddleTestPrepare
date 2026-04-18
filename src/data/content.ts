@@ -125,46 +125,10 @@ export const sections: Section[] = [
     ],
   },
 
-  // ──────── 02. iPhone & Android 역사 ────────
-  {
-    id: 'ios-history',
-    number: '02',
-    label: '공통 범위',
-    title: 'iPhone & Android 역사',
-    desc: '이전 학기에는 시험범위 외였음. 올해 범위는 교수님 공지 확인 필수. 참고 자료로만 활용하세요.',
-    blocks: [
-      {
-        type: 'callout',
-        data: {
-          type: 'warn',
-          label: '⚠️ 시험범위 확인 필요',
-          content: '이전 학기(24년 1학기)에는 <strong>iOS/Android 역사 부분이 시험범위에 포함되지 않았습니다</strong>. 올해 시험범위는 교수님이 공지하는 걸 반드시 확인하세요. 이 섹션은 참고용으로만 사용하세요.',
-        },
-      },
-      {
-        type: 'table',
-        data: {
-          headers: ['연도/사건', '내용'],
-          rows: [
-            { cells: ['2003.10', '<strong>Android, Inc.</strong> 설립 (Palo Alto, California) — Andy Rubin 등'] },
-            { cells: ['2005', '<strong>Google이 Android Inc. 인수</strong>'] },
-            { cells: ['2007.01', '<strong>Apple, 첫 iPhone 출시</strong> — Multi-touch gestures, HTML email, Safari, YouTube 탑재'] },
-            { cells: ['2007.11', 'Open Handset Alliance 설립 (86개 기업 참여) — Android 코드를 <strong>Apache License 오픈소스</strong>로 공개'] },
-            { cells: ['2008.07', 'iPhone 3G 출시 — <strong>App Store</strong>, 3G, GPS 도입'] },
-            { cells: ['2008.10', '첫 Android 스마트폰 <strong>HTC Dream(G1)</strong> 출시'] },
-            { cells: ['2010.01', '첫 Nexus 스마트폰 <strong>Nexus One</strong> (HTC + Google)'] },
-            { cells: ['2010.06', 'iPhone 4 — <strong>Retina Display (326 ppi)</strong>'] },
-            { cells: ['2015.04', 'Original Apple Watch 출시'] },
-          ],
-        },
-      },
-    ],
-  },
-
-  // ──────── 03. Xcode & 개발 환경 ────────
+  // ──────── 02. Xcode & 개발 환경 ────────
   {
     id: 'xcode',
-    number: '03',
+    number: '02',
     label: '개발 환경',
     title: 'Xcode & 개발 환경',
     desc: '단답형으로 나올 수 있는 개념들.',
@@ -203,10 +167,10 @@ export const sections: Section[] = [
     ],
   },
 
-  // ──────── 04. Swift UI 객체 개념 ────────
+  // ──────── 03. Swift UI 객체 개념 ────────
   {
     id: 'ui',
-    number: '04',
+    number: '03',
     label: 'Swift Concept · 핵심',
     title: 'Swift UI 객체 개념',
     desc: '정의를 그대로 외우세요. 살짝 말을 바꿔서 물을 수도 있음 (예: "임의의 양의 텍스트").',
@@ -276,10 +240,10 @@ export const sections: Section[] = [
     ],
   },
 
-  // ──────── 05. 아웃렛·액션 함수 ────────
+  // ──────── 04. 아웃렛·액션 함수 ────────
   {
     id: 'outlet',
-    number: '05',
+    number: '04',
     label: 'Swift Concept · 핵심',
     title: '아웃렛 변수 · 액션 함수',
     desc: '아웃렛 변수와 액션 함수의 차이를 확실히 구분해야 합니다.',
@@ -324,10 +288,10 @@ export const sections: Section[] = [
     ],
   },
 
-  // ──────── 06. Swift 언어 특징 ────────
+  // ──────── 05. Swift 언어 특징 ────────
   {
     id: 'swift-lang',
-    number: '06',
+    number: '05',
     label: 'Swift Concept',
     title: 'Swift 언어의 특징',
     desc: 'Swift 장점 — 단답형으로 나올 수 있음.',
@@ -358,10 +322,10 @@ export const sections: Section[] = [
     ],
   },
 
-  // ──────── 07. 변수와 상수 ────────
+  // ──────── 06. 변수와 상수 ────────
   {
     id: 'var',
-    number: '07',
+    number: '06',
     label: 'Swift 문법',
     title: '변수와 상수',
     desc: '선언 형식 + 이름 규칙 필수.',
@@ -457,10 +421,10 @@ let anotherPi = 3 + 0.14159   // Double로 추론`,
     ],
   },
 
-  // ──────── 08. 기본 자료형 ────────
+  // ──────── 07. 기본 자료형 ────────
   {
     id: 'type',
-    number: '08',
+    number: '07',
     label: 'Swift 문법',
     title: '기본 자료형 (Data Types)',
     desc: '각 타입의 특징이 단답으로 나올 수 있음.',
@@ -507,10 +471,10 @@ let widthLabel = label + String(width)   // Int → String 변환`,
     ],
   },
 
-  // ──────── 09. 연산자 ────────
+  // ──────── 08. 연산자 ────────
   {
     id: 'operator',
-    number: '09',
+    number: '08',
     label: 'Swift 문법',
     title: '연산자 (Operators)',
     desc: '',
@@ -609,10 +573,10 @@ a /= 2`,
     ],
   },
 
-  // ──────── 10. 문자열 ────────
+  // ──────── 09. 문자열 ────────
   {
     id: 'string',
-    number: '10',
+    number: '09',
     label: 'Swift 문법',
     title: '문자열 (String)',
     desc: '',
@@ -688,10 +652,10 @@ let exclamation: Character = "!"`,
     ],
   },
 
-  // ──────── 11. 배열 ────────
+  // ──────── 10. 배열 ────────
   {
     id: 'array',
-    number: '11',
+    number: '10',
     label: 'Swift 문법 · 핵심',
     title: '배열 (Array)',
     desc: '배열 선언, 요소 추가/삭제, 개수 확인 등 기본 연산을 정리.',
@@ -754,10 +718,10 @@ score[3] = 60`,
     ],
   },
 
-  // ──────── 12. 함수 ────────
+  // ──────── 11. 함수 ────────
   {
     id: 'func',
-    number: '12',
+    number: '11',
     label: 'Swift 문법',
     title: '함수 (Function)',
     desc: '',
@@ -891,10 +855,10 @@ someFunction(parameterWithoutDefault: 4)
     ],
   },
 
-  // ──────── 13. 클래스 상속 ────────
+  // ──────── 12. 클래스 상속 ────────
   {
     id: 'inheritance',
-    number: '13',
+    number: '12',
     label: 'Swift 문법 · 보충',
     title: '클래스 상속 (Inheritance)',
     desc: '클래스 상속은 Swift/iOS 개발의 기본 구조. ViewController가 동작하는 이유가 바로 상속.',
@@ -946,10 +910,10 @@ someFunction(parameterWithoutDefault: 4)
     ],
   },
 
-  // ──────── 14. 옵셔널 ────────
+  // ──────── 13. 옵셔널 ────────
   {
     id: 'optional',
-    number: '14',
+    number: '13',
     label: 'Swift 문법 · 최우선',
     title: '옵셔널 (Optional)',
     desc: 'Swift의 핵심 개념. 값이 있을 수도, 없을 수도 있는 타입.',
@@ -1082,10 +1046,10 @@ if count ( ) nil {
     ],
   },
 
-  // ──────── 15. 조건문·반복문 ────────
+  // ──────── 14. 조건문·반복문 ────────
   {
     id: 'flow',
-    number: '15',
+    number: '14',
     label: 'Swift 문법',
     title: '조건문 · 반복문',
     desc: '',
@@ -1227,10 +1191,10 @@ switch char {
     ],
   },
 
-  // ──────── 16. 클로저 ────────
+  // ──────── 15. 클로저 ────────
   {
     id: 'closure',
-    number: '16',
+    number: '15',
     label: 'Swift 문법 · 추가',
     title: '클로저 (Closure) · 익명함수',
     desc: '익명함수 개념.',
@@ -1316,10 +1280,10 @@ func completeWork(finished: Bool) -> () {
     ],
   },
 
-  // ──────── 17. 얼럿 ────────
+  // ──────── 16. 얼럿 ────────
   {
     id: 'alert',
-    number: '17',
+    number: '16',
     label: 'UI · 추가',
     title: '얼럿 (Alert)',
     desc: '사용자에게 메시지를 띄우는 UI 객체.',
@@ -1373,10 +1337,10 @@ present(lampOnAlert, animated: true, completion: nil)`,
     ],
   },
 
-  // ──────── 18. 예상 문제 ────────
+  // ──────── 17. 예상 문제 ────────
   {
     id: 'quiz',
-    number: '18',
+    number: '17',
     label: 'Practice',
     title: '예상 문제 33',
     desc: '머릿속으로 먼저 답해보세요.',
@@ -1400,9 +1364,6 @@ present(lampOnAlert, animated: true, completion: nil)`,
           items: [
             { question: '아이폰 앱 개발을 위한 통합 개발 환경(IDE)의 이름은?', answer: 'Xcode' },
             { question: 'IDE는 무엇의 약자인가?', answer: 'Integrated Development Environment (통합 개발 환경)' },
-            { question: '첫 iPhone이 출시된 연도와 월은?', answer: '2007년 1월' },
-            { question: '첫 Android 스마트폰의 이름은?', answer: 'HTC Dream (HTC G1)' },
-            { question: 'Google이 Android, Inc.를 인수한 연도는?', answer: '2005년' },
           ],
         },
       },
@@ -1468,10 +1429,10 @@ present(lampOnAlert, animated: true, completion: nil)`,
     ],
   },
 
-  // ──────── 19. 최종 체크리스트 ────────
+  // ──────── 18. 최종 체크리스트 ────────
   {
     id: 'checklist',
-    number: '19',
+    number: '18',
     label: 'Final Check',
     title: '시험 직전 체크리스트',
     desc: '체크박스 클릭하면 완료 표시됩니다 (브라우저에 저장됨).',
@@ -1485,7 +1446,6 @@ present(lampOnAlert, animated: true, completion: nil)`,
             'Xcode가 macOS에서만 동작한다는 사실',
             'Xcode = IDE (Integrated Development Environment)',
             'iOS 앱 개발 3요소: 맥 PC + macOS + Xcode',
-            '첫 iPhone 2007.1, 첫 Android폰 HTC Dream 2008.10',
           ],
         },
       },
