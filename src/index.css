@@ -62,6 +62,12 @@
   }
 }
 
+/* Disable font ligatures for code elements */
+code, pre, .font-mono, [class*="mono"] {
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;

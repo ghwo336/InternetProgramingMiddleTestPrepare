@@ -75,12 +75,7 @@ export const heroData = {
   title: 'Swift Exam Kit',
   subtitle: '출제 범위 전체를 한 페이지로',
   desc: '벼락치기하시는 분들을 위한 정리본입니다!',
-  meta: [
-    { label: '중간', value: '28문항' },
-    { label: '기말', value: '20문항' },
-    { label: '유형', value: '주관식 단답 · 빈칸 코드' },
-    { label: '기반', value: 'Do it! 7판 + PPT 전체' },
-  ] as HeroMeta[],
+  disclaimer: '내용의 정확성을 책임지지는 않습니다! 정확한 내용은 수업자료를 확인해주세요!',
 };
 
 
@@ -211,6 +206,14 @@ export const sections: Section[] = [
     desc: '시험 절반이 이 단답형입니다. 책에 한 줄로 나온 정의를 그대로 외우세요. 교재와 살짝 말을 바꿔서 물을 수도 있음 (예: "임의의 양의 텍스트").',
     blocks: [
       {
+        type: 'callout',
+        data: {
+          type: 'key',
+          label: 'Xcode + 버튼으로 추가하는 객체들 (기출)',
+          content: 'Xcode에서 스토리보드 편집 시 <strong>우측 상단의 + 버튼</strong>을 클릭하면 Objects 라이브러리가 열리고, 여기서 아래 객체들을 드래그해 화면에 배치할 수 있음.<br/>시험에서는 <strong>각 객체의 이름과 정의</strong>를 단답형으로 물어봄. 정의를 그대로 외울 것.',
+        },
+      },
+      {
         type: 'table',
         data: {
           headers: ['객체', '정의 (외울 문장)'],
@@ -218,6 +221,7 @@ export const sections: Section[] = [
             { cells: ['레이블 (Label)\nUILabel', '<mark>임의의 양의 텍스트</mark>를 보여주기 위한 객체 (읽기 전용) <badge:hot>기출</badge>'] },
             { cells: ['버튼 (Button)\nUIButton', '사용자의 <strong>터치 이벤트</strong>를 받는 객체'] },
             { cells: ['텍스트 필드 (TextField)\nUITextField', '사용자로부터 <strong>한 줄의 텍스트</strong>를 입력받는 객체'] },
+            { cells: ['텍스트 뷰 (TextView)\nUITextView', '<strong>여러 줄</strong>의 텍스트를 입력받거나 표시하는 객체 (TextField는 한 줄) <badge:hot>기출</badge>'] },
             { cells: ['이미지 뷰 (ImageView)\nUIImageView', '이미지를 화면에 표시하는 객체'] },
             { cells: ['스위치 (Switch)\nUISwitch', '<strong>on/off</strong> 두 상태를 표현하는 객체'] },
             { cells: ['데이트 피커 (Date Picker)\nUIDatePicker', '<strong>날짜와 시간</strong>을 선택할 수 있게 해주는 객체. 시계 앱의 알람 탭에서 자주 사용'] },
@@ -236,6 +240,33 @@ export const sections: Section[] = [
           type: 'warn',
           label: '주의 — 데이트 피커 vs 피커 뷰 구분',
           content: '<strong>데이트 피커</strong>는 날짜/시간 선택용, <strong>피커 뷰</strong>는 일반 문자열 선택용. 시험에 둘 다 나올 수 있음.',
+        },
+      },
+      {
+        type: 'heading3',
+        content: 'TextField vs TextView 구분',
+        badge: '기출',
+        badgeType: 'hot',
+      },
+      {
+        type: 'compare',
+        data: {
+          left: {
+            label: 'TextField (UITextField)',
+            content: '<strong>한 줄</strong> 입력. 이름, 이메일 등 짧은 텍스트.',
+          },
+          right: {
+            label: 'TextView (UITextView)',
+            content: '<strong>여러 줄</strong> 입력/표시. 댓글, 메모, 긴 본문.',
+          },
+        },
+      },
+      {
+        type: 'callout',
+        data: {
+          type: 'warn',
+          label: '시험 기출 — TextField ≠ TextView',
+          content: '"TextField"와 "TextView"는 전혀 다른 객체. <strong>한 줄 vs 여러 줄</strong>로 구분. 혼동 주의!',
         },
       },
     ],
@@ -757,35 +788,164 @@ print(greet(person: "Brian"))   // "Hello, Brian!"`,
       },
       {
         type: 'heading3',
-        content: '매개변수 레이블 (Argument Label)',
+        content: '아규먼트 레이블 완전 정리',
+        badge: '기출 확정',
+        badgeType: 'hot',
+      },
+      {
+        type: 'text',
+        content: 'Swift 함수의 각 매개변수는 두 가지 이름을 가질 수 있음:\n• <strong>Argument Label (아규먼트 레이블)</strong>: 함수 <strong>호출 시</strong> 사용하는 이름\n• <strong>Parameter Name (파라미터 이름)</strong>: 함수 <strong>내부에서</strong> 사용하는 이름\n\n기본적으로 Parameter Name이 곧 Argument Label로 사용됨.',
+      },
+      {
+        type: 'heading4',
+        content: '1) 기본 — 두 이름이 같음',
       },
       {
         type: 'code',
         data: {
-          code: `// 기본: 호출 시 레이블 사용 필수
-func someFunction(firstParam: Int, secondParam: Int) { }
-someFunction(firstParam: 1, secondParam: 2)
-
-// 레이블 생략: _ 사용
-func someFunction(_ firstParam: Int, secondParam: Int) { }
-someFunction(1, secondParam: 2)`,
+          code: `func someFunction(firstParameterName: Int, secondParameterName: Int) {
+    // 내부에서는 firstParameterName, secondParameterName 사용
+}
+someFunction(firstParameterName: 1, secondParameterName: 2)`,
+        },
+      },
+      {
+        type: 'heading4',
+        content: '2) Specifying Argument Labels — 외부이름/내부이름 분리',
+      },
+      {
+        type: 'text',
+        content: '공백으로 구분해서 작성. 호출 시에는 앞쪽(레이블), 내부에서는 뒤쪽(파라미터 이름) 사용.',
+      },
+      {
+        type: 'code',
+        data: {
+          code: `func greet(person: String, from hometown: String) -> String {
+    return "Hello \\(person)! Glad you could visit from \\(hometown)."
+}
+print(greet(person: "Bill", from: "Cupertino"))
+// "Hello Bill! Glad you could visit from Cupertino."
+// 호출 시에는 from, 내부에서는 hometown 사용`,
+        },
+      },
+      {
+        type: 'heading4',
+        content: '3) Omitting Argument Labels — 언더스코어(_)로 레이블 생략 🔴 기출',
+      },
+      {
+        type: 'code',
+        data: {
+          code: `func someFunction(_ firstParameterName: Int, secondParameterName: Int) {
+    // 내부에서는 firstParameterName, secondParameterName 그대로 사용
+}
+someFunction(1, secondParameterName: 2)
+// 첫 번째 인자는 레이블 없이 호출!`,
         },
       },
       {
         type: 'callout',
         data: {
-          type: 'warn',
-          label: 'JS와 가장 큰 차이',
-          content: 'Swift는 함수 호출 시 <strong>매개변수 이름(레이블)을 꼭 써야</strong> 합니다.<br/>JS: <code>greet("Anna")</code> &nbsp; vs &nbsp; Swift: <code>greet(person: "Anna")</code>',
+          type: 'tip',
+          label: 'JS/TS 개발자 관점',
+          content: 'JS에선 그냥 <code>func(1, 2)</code>처럼 값만 넘기면 됐지만, Swift는 <strong>레이블 명시가 기본</strong>. 레이블을 생략하고 싶으면 <code>_</code>를 붙여야 함.',
+        },
+      },
+      {
+        type: 'heading3',
+        content: '디폴트 파라미터 값 (Default Parameter Values)',
+        badge: '기출',
+        badgeType: 'hot',
+      },
+      {
+        type: 'text',
+        content: '함수의 매개변수에 <strong>기본값</strong>을 지정하면, 호출 시 해당 인자를 <strong>생략할 수 있음</strong>. 생략하면 기본값 사용.',
+      },
+      {
+        type: 'code',
+        data: {
+          code: `func someFunction(parameterWithoutDefault: Int, parameterWithDefault: Int = 12) {
+    // 두 번째 인자를 생략하면 parameterWithDefault는 12가 됨
+}
+
+someFunction(parameterWithoutDefault: 3, parameterWithDefault: 6)
+// parameterWithDefault 는 6
+
+someFunction(parameterWithoutDefault: 4)
+// parameterWithDefault 는 12 (기본값 사용)`,
+        },
+      },
+      {
+        type: 'callout',
+        data: {
+          type: 'key',
+          label: '디폴트 파라미터 핵심 포인트',
+          content: '• 기본값이 있는 매개변수는 <strong>뒤쪽에</strong> 배치하는 것이 관례<br/>• 호출 시 해당 인자를 <strong>생략 가능</strong><br/>• 생략하면 <strong>기본값</strong>이 자동 적용',
         },
       },
     ],
   },
 
-  // ──────── 13. 옵셔널 ────────
+  // ──────── 13. 클래스 상속 ────────
+  {
+    id: 'inheritance',
+    number: '13',
+    label: 'Swift 문법 · 보충',
+    title: '클래스 상속 (Inheritance)',
+    badge: '출제 가능',
+    badgeType: 'mid',
+    desc: '클래스 상속은 Swift/iOS 개발의 기본 구조. ViewController가 동작하는 이유가 바로 상속.',
+    blocks: [
+      {
+        type: 'text',
+        content: '클래스는 <strong>부모 클래스</strong>와 <strong>자식 클래스</strong>로 구분됨.\n• <strong>자식 클래스</strong>: 상속받는 클래스\n• <strong>부모 클래스</strong>: 상속하는 클래스\n• <strong>상속받는다</strong> = 부모 클래스의 변수와 함수를 <strong>모두 사용할 수 있다</strong>는 뜻',
+      },
+      {
+        type: 'heading3',
+        content: '상속 문법',
+      },
+      {
+        type: 'text',
+        content: '클래스 이름 오른쪽에 <strong><code>:</code></strong> 과 함께 부모 클래스 이름을 입력.',
+      },
+      {
+        type: 'code',
+        data: {
+          code: `class ViewController: UIViewController {
+    // UIViewController 의 모든 기능 상속받음
+}`,
+        },
+      },
+      {
+        type: 'heading3',
+        content: '여러 프로토콜/클래스 상속',
+      },
+      {
+        type: 'text',
+        content: '<strong><code>,</code></strong> 로 이어 붙임.',
+      },
+      {
+        type: 'code',
+        data: {
+          code: `class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    // 피커뷰 델리게이트/데이터소스도 함께 채택
+}`,
+        },
+      },
+      {
+        type: 'callout',
+        data: {
+          type: 'key',
+          label: '실제 적용',
+          content: '우리가 지금까지 작성한 <code>ViewController</code> 클래스는 사실상 항상 <code>UIViewController</code>를 상속받고 있었음. 아웃렛 변수와 액션 함수가 동작하는 이유가 바로 이 상속 때문.',
+        },
+      },
+    ],
+  },
+
+  // ──────── 14. 옵셔널 ────────
   {
     id: 'optional',
-    number: '13',
+    number: '14',
     label: 'Swift 문법 · 최우선',
     title: '옵셔널 (Optional)',
     desc: '시험 후기가 두 번 강조한 단원: "옵셔널 관련은 개념 확실히 알아두는 게 중요합니다~ 중요해요~"\n기출 출제 경향 요약: "옵셔널만 제대로 파면 절반은 맞출 수 있다". 여기가 시험의 핵심.',
@@ -920,10 +1080,10 @@ if count ( ) nil {
     ],
   },
 
-  // ──────── 14. 조건문·반복문 ────────
+  // ──────── 15. 조건문·반복문 ────────
   {
     id: 'flow',
-    number: '14',
+    number: '15',
     label: 'Swift 문법',
     title: '조건문 · 반복문',
     desc: '',
@@ -1038,6 +1198,14 @@ switch char {
         },
       },
       {
+        type: 'callout',
+        data: {
+          type: 'warn',
+          label: 'O/X 기출 확정',
+          content: '문제: "스위치문에서 <strong>break</strong>를 써야 종료된다" → 정답: <strong>X (거짓)</strong><br/><br/>Swift 공식 문법: <em>"In contrast with switch statements in C and Objective-C, switch statements in Swift don\'t fall through the bottom of each case and into the next one by default."</em><br/><br/>즉, Swift의 switch는 <strong>매칭된 case 실행 후 자동으로 종료</strong>됨. <code>break</code> 문 불필요. C/Java와 정반대!',
+        },
+      },
+      {
         type: 'heading3',
         content: 'break · continue',
       },
@@ -1057,10 +1225,10 @@ switch char {
     ],
   },
 
-  // ──────── 15. 클로저 ────────
+  // ──────── 16. 클로저 ────────
   {
     id: 'closure',
-    number: '15',
+    number: '16',
     label: 'Swift 문법 · 추가',
     title: '클로저 (Closure) · 익명함수',
     desc: '별도 PPT(Closures.pdf)로 제공된 만큼 출제 가능성 있음. 06장 PPT에도 "익명함수란?"으로 자세히 나옴.',
@@ -1146,10 +1314,10 @@ func completeWork(finished: Bool) -> () {
     ],
   },
 
-  // ──────── 16. 얼럿 ────────
+  // ──────── 17. 얼럿 ────────
   {
     id: 'alert',
-    number: '16',
+    number: '17',
     label: 'UI · 추가',
     title: '얼럿 (Alert)',
     desc: '06장 전용 객체. 06장 범위 포함이면 출제 가능.',
@@ -1203,12 +1371,12 @@ present(lampOnAlert, animated: true, completion: nil)`,
     ],
   },
 
-  // ──────── 17. 예상 문제 ────────
+  // ──────── 18. 예상 문제 ────────
   {
     id: 'quiz',
-    number: '17',
+    number: '18',
     label: 'Practice',
-    title: '예상 문제 30',
+    title: '예상 문제 33',
     desc: '기출 + 출제 가능성 높은 문제들. 머릿속으로 먼저 답해보세요.',
     blocks: [
       {
@@ -1248,6 +1416,7 @@ present(lampOnAlert, animated: true, completion: nil)`,
             { question: '사용자에게 중요한 알림이나 경고 메시지를 나타내는 객체는?', answer: '얼럿 (Alert) / UIAlertController' },
             { question: '날짜와 시간을 선택할 수 있게 해주는 객체는?', answer: '데이트 피커 (Date Picker)' },
             { question: '문자열 목록에서 회전하여 선택하게 해주는 객체는?', answer: '피커 뷰 (Picker View)' },
+            { question: 'TextField와 TextView의 차이는?', answer: 'TextField는 한 줄 텍스트 입력, TextView는 여러 줄 텍스트 입력/표시.' },
           ],
         },
       },
@@ -1262,6 +1431,8 @@ present(lampOnAlert, animated: true, completion: nil)`,
             { question: '배열 sports의 끝에 "reebok"을 추가하는 코드는?', answer: 'sports.append("reebok")' },
             { question: 'sports 배열의 요소 개수를 출력하는 코드는?', answer: 'print(sports.count)' },
             { question: '다음 중 변수명으로 사용 가능한 것은? ① 1name ② my name ③ _name ④ na me', answer: '③ _name (숫자로 시작 X, 공백 포함 X)' },
+            { question: '함수 매개변수에 기본값(디폴트값)을 지정하는 문법을 쓰시오.', answer: 'func f(x: Int = 10) — 타입 뒤에 = 기본값' },
+            { question: '"Swift의 switch 문에서는 각 case 끝에 break를 써야 한다." (O/X)', answer: 'X — Swift의 switch는 자동으로 fall through 하지 않아 break 불필요.' },
           ],
         },
       },
@@ -1292,10 +1463,10 @@ present(lampOnAlert, animated: true, completion: nil)`,
     ],
   },
 
-  // ──────── 18. 최종 체크리스트 ────────
+  // ──────── 19. 최종 체크리스트 ────────
   {
     id: 'checklist',
-    number: '18',
+    number: '19',
     label: 'Final Check',
     title: '시험 직전 체크리스트',
     desc: '체크박스 클릭하면 완료 표시됩니다 (브라우저에 저장됨).',

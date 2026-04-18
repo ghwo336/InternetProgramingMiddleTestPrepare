@@ -38,20 +38,12 @@ export default function Hero() {
         <p style={{ fontSize: '18px', color: 'var(--color-ink-soft)', marginBottom: '8px' }}>
           {heroData.subtitle}
         </p>
-        <p style={{ fontSize: '14px', color: 'var(--color-ink-muted)', maxWidth: '42rem', marginBottom: '1.5rem' }}>
+        <p style={{ fontSize: '14px', color: 'var(--color-ink-muted)', maxWidth: '42rem', marginBottom: '6px' }}>
           {heroData.desc}
         </p>
-
-        <div
-          className="font-mono"
-          style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', fontSize: '12px', color: 'var(--color-ink-muted)', marginBottom: '1rem' }}
-        >
-          {heroData.meta.map((m, i) => (
-            <span key={i}>
-              <b style={{ color: 'var(--color-ink)' }}>{m.label}</b> {m.value}
-            </span>
-          ))}
-        </div>
+        <p style={{ fontSize: '13px', color: '#ef4444', fontWeight: 500, maxWidth: '42rem', marginBottom: '1.5rem' }}>
+          {heroData.disclaimer}
+        </p>
 
         <a
           href="https://x.com/ihojae212644"
